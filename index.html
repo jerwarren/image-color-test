@@ -69,8 +69,15 @@
 </div>
 
 
+<div class="image image-14" id="image-14" image="images/image14.jpg" style="background-image: url(images/image14.jpg)">
+    <img class="off-screen" src="images/image14.jpg">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="sample image-14" image="images/image14.jpg" style="background-image: url(images/image14.jpg)">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="swatch swatch-image-14">&nbsp;</div><br><br>
 
-<div class="wrapper">
 <div class="image image-1" id="image-1" image="images/image1.jpeg" style="background-image: url(images/image1.jpeg)">
     <img class="off-screen" src="images/image1.jpeg">
     <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
@@ -79,7 +86,6 @@
     <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
 </div>
 <div class="swatch swatch-image-1">&nbsp;</div><br><br>
-</div>
 
 
 <div class="image image-3" id="image-3" image="images/image3.jpg" style="background-image: url(images/image3.jpg)">
@@ -194,6 +200,7 @@
                     img = document.querySelector("#"+id+" > img"),
                     img.crossOrigin = "Anonymous";
                     color = fac.getColor(img);
+                    console.log(color);
                     $(".swatch-"+id).css('background-color', color.hex);
                     $(".sample."+id).css('background-color', color.rgb.replace(')', ','+$('#colorPercentage').val()/100 +')').replace('rgb', 'rgba'));
                     $(".sample."+id+">h1").css('text-shadow', color.rgb + " 0 0 5vw");
