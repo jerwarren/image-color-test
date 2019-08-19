@@ -1,91 +1,210 @@
+<html>
+
+<head>
 <script src="https://lrcr-staging.herokuapp.com/js/fast-average.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <style>
+    .body, html {
+        margin: 0;
+        padding: 0;
+        overflow-x: hidden;
+        background-color: black;
+    }
     .image {
-        width: 100vw;
-        height: 60vw;
+        width: 50%;
+        height: 30vw;
         background-size: cover;
+        float: left;
+    }
+    .sample {
+        width: 50%;
+        height: 30vw;
+        background-size: cover;
+        float: right;
+        background-blend-mode: soft-light;
     }
     .off-screen {
         position: absolute;
         left: -10000px;
         top: -10000px;
     }
+    .swatch {
+        width: 100vw;
+        height: 100px;
+        float: left;
+    }
+    h1 {
+        padding:5vw;
+        color: white;
+        width: 40%;
+        font-size: 2.6vw;
+    }
+    #controls {
+        text-align: center;
+        width: 100vw;
+        height: 50px;
+        padding-top: 20px;
+        position:fixed;
+        background-color: black;
+        top: 0;
+    }
+    .wrapper {
+        background-color: black;
+        width: 100vw;
+    }
 </style>
+</head>
+
+<body>
+<div id="controls">
+
+    <select id="blend-mode">
+        <option selected value="soft-light">soft-light</option>
+        <option value="multiply">multiply</option>
+        <option value="exclusion">exclusion</option>
+        <option value="lighten">lighten</option>
+        <option value="screen">screen</option>
+    </select>
+    <input type="range" default="1" min="0" max="100" value="62" class="slider" id="colorPercentage">
+</div>
 
 
-<div class="image image-1" image="images/image1.jpeg" style="background-image: url(images/image1.jpeg)">
+
+<div class="wrapper">
+<div class="image image-1" id="image-1" image="images/image1.jpeg" style="background-image: url(images/image1.jpeg)">
     <img class="off-screen" src="images/image1.jpeg">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="sample image-1" image="images/image1.jpeg" style="background-image: url(images/image1.jpeg)">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="swatch swatch-image-1">&nbsp;</div><br><br>
 </div>
 
-<br><br>
 
-<div class="image image-3" image="images/image3.jpg" style="background-image: url(images/image3.jpg)">
+<div class="image image-3" id="image-3" image="images/image3.jpg" style="background-image: url(images/image3.jpg)">
     <img class="off-screen" src="images/image3.jpg">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
 </div>
+<div class="sample image-3" image="images/image3.jpg" style="background-image: url(images/image3.jpg)">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="swatch swatch-image-3">&nbsp;</div><br><br>
 
-<br><br>
-
-<div class="image image-4" image="images/image4.jpg" style="background-image: url(images/image4.jpg)">
+<div class="image image-4" id="image-4" image="images/image4.jpg" style="background-image: url(images/image4.jpg)">
     <img class="off-screen" src="images/image4.jpg">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
 </div>
+<div class="sample image-4" image="images/image4.jpg" style="background-image: url(images/image4.jpg)">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="swatch swatch-image-4">&nbsp;</div><br><br>
 
-<br><br>
-
-<div class="image image-5" image="images/image5.jpg" style="background-image: url(images/image5.jpg)">
+<div class="image image-5" id="image-5" image="images/image5.jpg" style="background-image: url(images/image5.jpg)">
     <img class="off-screen" src="images/image5.jpg">
-
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
 </div>
+<div class="sample image-5" image="images/image5.jpg" style="background-image: url(images/image5.jpg)">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="swatch swatch-image-5">&nbsp;</div><br><br>
 
-<br><br>
-
-<div class="image image-6" image="images/image6.png" style="background-image: url(images/image6.png)">
+<div class="image image-6" id="image-6" image="images/image6.png" style="background-image: url(images/image6.png)">
     <img class="off-screen" src="images/image6.png">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
 </div>
+<div class="sample image-6" image="images/image6.png" style="background-image: url(images/image6.png)">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="swatch swatch-image-6">&nbsp;</div><br><br>
 
-<br><br>
-
-<div class="image image-7" image="images/image7.jpg" style="background-image: url(images/image7.jpg)">
+<div class="image image-7" id="image-7" image="images/image7.jpg" style="background-image: url(images/image7.jpg)">
     <img class="off-screen" src="images/image7.jpg">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
 </div>
+<div class="sample image-7" image="images/image7.jpg" style="background-image: url(images/image7.jpg)">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="swatch swatch-image-7">&nbsp;</div><br><br>
 
-<br><br>
-
-<div class="image image-8" image="images/image8.jpg" style="background-image: url(images/image8.jpg)">
+<div class="image image-8" id="image-8" image="images/image8.jpg" style="background-image: url(images/image8.jpg)">
     <img class="off-screen" src="images/image8.jpg">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
 </div>
+<div class="sample image-8" image="images/image8.jpg" style="background-image: url(images/image8.jpg)">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="swatch swatch-image-8">&nbsp;</div><br><br>
 
+<div class="image image-9" id="image-9" image="images/image9.jpeg" style="background-image: url(images/image9.jpeg)">
+    <img class="off-screen" src="images/image9.jpeg">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="sample image-9" image="images/image9.jpeg" style="background-image: url(images/image9.jpeg)">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="swatch swatch-image-9">&nbsp;</div><br><br>
+
+<div class="image image-10" id="image-10" image="images/image10.jpeg" style="background-image: url(images/image10.jpeg)">
+    <img class="off-screen" src="images/image10.jpeg">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="sample image-10" id="image-10" image="images/image10.jpeg" style="background-image: url(images/image10.jpeg)">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="swatch swatch-image-10">&nbsp;</div><br><br>
+
+<div class="image image-11" id="image-11" image="images/image11.jpg" style="background-image: url(images/image11.jpg)">
+    <img class="off-screen" src="images/image11.jpg">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="sample image-11" image="images/image11.jpg" style="background-image: url(images/image11.jpg)">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="swatch swatch-image-11">&nbsp;</div><br><br>
+
+<div class="image image-12" id="image-12" image="images/image12.jpg" style="background-image: url(images/image12.jpg)">
+    <img class="off-screen" src="images/image12.jpg">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="sample image-12" image="images/image12.jpg" style="background-image: url(images/image12.jpg)">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="swatch swatch-image-12">&nbsp;</div><br><br>
+
+<div class="image image-13" id="image-13" image="images/image13.jpg" style="background-image: url(images/image13.jpg)">
+    <img class="off-screen" src="images/image13.jpg">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="sample image-13" image="images/image13.jpg" style="background-image: url(images/image13.jpg)">
+    <h1>Parley mutiny cackle fruit landlubber or just lubber pinnace</h1>
+</div>
+<div class="swatch swatch-image-13">&nbsp;</div><br><br>
 
 <script>
     $( document ).ready(function() {
-        setTimeout(function(){
-            var fac = new FastAverageColor();
             
-            
+        var fac = new FastAverageColor();
+        
+        function setUp() {
+            $(".sample").css("background-blend-mode", $("#blend-mode").val());
             $('.image').each(function(){   
-                console.log($(this).attr('image'));
-                img = $(this).find('img');
-                img.crossOrigin = "Anonymous";
-                color = fac.getColor(img);
-
-                console.log(color);
+                id = $(this).attr("id");
+                $("#"+id+" > img").each(function(){
+                    img = document.querySelector("#"+id+" > img"),
+                    img.crossOrigin = "Anonymous";
+                    color = fac.getColor(img);
+                    $(".swatch-"+id).css('background-color', color.hex);
+                    $(".sample."+id).css('background-color', color.rgb.replace(')', ','+$('#colorPercentage').val()/100 +')').replace('rgb', 'rgba'));
+                    $(".sample."+id+">h1").css('text-shadow', color.rgb + " 0 0 5vw");
+                });
             });
-
-
-
-
-                // {
-                //     error: null,
-                //     rgb: 'rgb(255, 0, 0)',
-                //     rgba: 'rgba(255, 0, 0, 1)',
-                //     hex: '#ff0000',
-                //     hexa: '#ff0000ff',
-                //     value: [255, 0, 0, 255],
-                //     isDark: true,
-                //     isLight: false
-                // }
-        },2000);
-    });
-
             
-    </script>
+        }
+        setUp();
+        $('#blend-mode').change(setUp);
+        $('#colorPercentage').change(setUp);
+    });       
+</script>
+</body>
+</html>
