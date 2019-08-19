@@ -218,26 +218,26 @@
                     img = document.querySelector("#"+id+" > img"),
                     img.crossOrigin = "Anonymous";
                     color = fac.getColor(img);
-
-                    console.log(id, color);
                     
                     if (color.isLight){
+                        backgroundColor = color.hex;
+                        $(".swatch-"+id).css('background-color', backgroundColor);
+                        $(".swatch-"+id).css('color', "#000");
                         backgroundColor = "#000000";
                         scrimColor = "#000000";
                         $(".swatch-"+id).text("average color too light, using black shadow instead: " + backgroundColor);
+                       
                     } else {
                         backgroundColor = color.hex;
                         scrimColor = color.rgb;
                         $(".swatch-"+id).text("average color: " + backgroundColor);
+                        $(".swatch-"+id).css('background-color', backgroundColor);
+                        $(".swatch-"+id).css('color', "#fff");
                     }
-
-                    $(".swatch-"+id).css('background-color', backgroundColor);
-                    $(".sample."+id).css('background-color', color.rgb.replace(')', ','+$('#colorPercentage').val()/100 +')').replace('rgb', 'rgba'));
                     
-                    //$(".sample."+id).css('background-image', 'linear-gradient(to right,'+color.rgb.replace(')', ','+$('#colorPercentage').val()/100 +')').replace('rgb', 'rgba')+', rgba(0,0,0,0))');
-
+                    $(".sample."+id).css('background-color', color.rgb.replace(')', ','+$('#colorPercentage').val()/100 +')').replace('rgb', 'rgba'));
                     $("#opacityDisplay").text($('#colorPercentage').val()/100);
-                    $(".sample."+id+">h1").css('text-shadow', scrimColor + " 0 0 5vw");
+                    $(".sample."+id+">h1").css('text-shadow', backgroundColor + " 0 0 2.5vw");
                 });
             });
             
