@@ -52,6 +52,7 @@
         position:fixed;
         background-color: black;
         top: 0;
+        color: white;
     }
     .wrapper {
         background-color: black;
@@ -62,7 +63,7 @@
 
 <body>
 <div id="controls">
-
+    Blend Mode
     <select id="blend-mode">
         <option selected value="soft-light">soft-light</option>
         <option value="multiply">multiply</option>
@@ -70,7 +71,10 @@
         <option value="lighten">lighten</option>
         <option value="screen">screen</option>
     </select>
+    &nbsp;&nbsp;&nbsp;&nbsp;
+    Background Opacity
     <input type="range" default="1" min="0" max="100" value="62" class="slider" id="colorPercentage">
+    <input id="opacityDisplay" value="" readonly>
 </div>
 
 
@@ -210,6 +214,7 @@
                     $(".swatch-"+id).css('background-color', color.hex);
                     $(".swatch-"+id).text("average color: "+color.hex);
                     $(".sample."+id).css('background-color', color.rgb.replace(')', ','+$('#colorPercentage').val()/100 +')').replace('rgb', 'rgba'));
+                    $("#opacityDisplay").val($('#colorPercentage').val()/100);
                     $(".sample."+id+">h1").css('text-shadow', color.rgb + " 0 0 5vw");
                 });
             });
